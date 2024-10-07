@@ -86,11 +86,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audio Otomatis</title>
+    <title>Audio Otomatis di Semua Browser</title>
 </head>
 <body>
     <audio autoplay loop>
+        <!-- Format audio MP4 -->
         <source src="https://nixystore.my.id/d18ycs3ZJo4.m4a" type="audio/mp4">
+        <!-- Format audio MP3 sebagai fallback -->
+        <source src="https://nixystore.my.id/audio-file.mp3" type="audio/mpeg">
+        <!-- Format audio OGG sebagai fallback lainnya -->
+        <source src="https://nixystore.my.id/audio-file.ogg" type="audio/ogg">
         Browser Anda tidak mendukung pemutar audio.
     </audio>
 </body>
