@@ -1,7 +1,7 @@
 <!DOCTYPE html>
     <html lang="en">
     <head>
-        <meta charset="UTF-8">
+        <meta charset="UeTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
         <!--=============== FAVICON ===============-->
@@ -91,54 +91,88 @@
     <title>Salin Kode Fitur</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            background-color: #f0f0f0;
+            font-family: 'Arial', sans-serif; /* Font modern */
+            background-color: #f0f0f0; /* Warna latar belakang default */
+            color: #333; /* Warna teks default */
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
             margin: 0;
+            transition: background-color 0.5s ease, color 0.5s ease; /* Transisi saat mode berubah */
+        }
+
+        .dark-mode {
+            background-color: #000; /* Warna latar belakang saat mode malam */
+            color: #fff; /* Warna teks saat mode malam */
         }
 
         .code-container {
-            background-color: #ffffff;
+            background-color: #ffffff; /* Warna kontainer default */
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
             text-align: left;
             max-width: 600px;
             width: 100%;
+            transition: background-color 0.5s ease; /* Transisi saat mode berubah */
+        }
+
+        .dark-mode .code-container {
+            background-color: #333; /* Warna kontainer saat mode malam */
+        }
+
+        .title {
+            background-color: #4a90e2; /* Warna biru yang lebih lembut */
+            color: white;
+            padding: 15px;
+            border-radius: 8px;
+            text-align: center;
+            font-size: 28px; /* Ukuran font lebih besar untuk judul */
+            margin-bottom: 15px;
+            font-family: 'Roboto', sans-serif; /* Font Roboto untuk judul */
+            letter-spacing: 1px; /* Jarak antar huruf */
         }
 
         .copy-button {
-            background-color: #007bff;
+            background: linear-gradient(145deg, #ff8a00, #e52e71); /* Warna 3D dengan gradien */
             color: white;
             border: none;
-            padding: 10px 15px;
-            border-radius: 5px;
+            padding: 15px;
+            border-radius: 10px;
             cursor: pointer;
-            font-size: 16px;
-            margin-bottom: 10px;
-            transition: background-color 0.3s ease;
+            font-size: 18px; /* Ukuran font untuk tombol */
+            margin-bottom: 15px;
+            transition: 0.5s;
+            box-shadow: 5px 5px 15px #a3a3a3, 
+                        -5px -5px 15px #ffffff; /* Efek bayangan 3D */
             width: 100%; /* Tombol mengisi lebar kontainer */
+            font-family: 'Roboto', sans-serif; /* Font Roboto untuk tombol */
         }
 
         .copy-button:hover {
-            background-color: #0056b3;
+            transform: translateY(-4px); /* Efek hover untuk tampilan 3D */
+            box-shadow: 2px 2px 10px #a3a3a3, 
+                        -2px -2px 10px #ffffff; /* Bayangan saat hover */
         }
 
         .code-block {
-            background-color: #f8f9fa;
+            background-color: #f8f9fa; /* Warna latar belakang blok kode default */
             border: 1px solid #ced4da;
             padding: 10px;
             border-radius: 5px;
             overflow-x: auto;
             max-width: 100%;
             white-space: pre-wrap;
-            font-family: monospace;
+            font-family: 'Courier New', monospace; /* Font monospace untuk kode */
             font-size: 14px;
             line-height: 1.5;
             position: relative; /* Menambahkan posisi relatif untuk kontrol posisi */
+        }
+
+        .dark-mode .code-block {
+            background-color: #222; /* Warna latar belakang blok kode saat mode malam */
+            color: #fff; /* Warna teks saat mode malam */
         }
 
         /* Gaya untuk menampilkan tooltip */
@@ -163,6 +197,7 @@
 </head>
 <body>
     <div class="code-container">
+        <div class="title">UI/UX</div>
         <button id="copyButton" class="copy-button">Salin Kode</button>
         <pre id="codeToCopy" class="code-block">
 <code>
@@ -186,9 +221,23 @@ console.log(greeting);
                 console.error("Gagal menyalin kode: ", err);
             });
         };
+        
+        // Tambahkan event listener untuk toggle mode
+        const toggleDarkMode = () => {
+            document.body.classList.toggle('dark-mode'); // Mengaktifkan/deaktivasi mode malam
+        };
+        
+        // Menggunakan listener jika mode sudah ada di website Anda
+        document.addEventListener('DOMContentLoaded', () => {
+            const existingToggleButton = document.querySelector('.toggle-mode-button'); // Ganti dengan kelas yang sesuai
+            if (existingToggleButton) {
+                existingToggleButton.addEventListener('click', toggleDarkMode);
+            }
+        });
     </script>
 </body>
 </html>
+
 
         <!--==================== POST ====================-->
         <script src="assets/js/scrollreveal.min.js"></script>
