@@ -86,7 +86,13 @@
         <!--==================== POST ====================-->
             <section class="products section" id="vpn">
                 <h2 class="section__title">
-                <style>
+                <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Copy Code Feature</title>
+    <style>
         body {
             font-family: 'Arial', sans-serif;
             display: flex;
@@ -97,34 +103,38 @@
         }
 
         .code-container {
-            padding: 20px;
-            max-width: 500px;
-            width: 100%;
             border: 1px solid #ddd;
             border-radius: 12px;
+            padding: 16px;
+            max-width: 500px;
+            width: 100%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
         }
 
         .header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 16px;
+            margin-bottom: 12px;
         }
 
         h3 {
             margin: 0;
-            font-size: 20px;
-            color: #222;
+            font-size: 18px;
+            font-weight: bold;
+            color: #333;
         }
 
         .copy-btn {
             background-color: #007bff;
             color: white;
             border: none;
-            padding: 10px;
+            padding: 8px 14px;
             font-size: 14px;
+            font-weight: bold;
             border-radius: 6px;
             cursor: pointer;
+            transition: background-color 0.2s ease;
         }
 
         .copy-btn:hover {
@@ -132,21 +142,21 @@
         }
 
         pre {
-            padding: 16px;
+            padding: 12px;
             border-radius: 8px;
-            font-size: 14px;
             border: 1px solid #ccc;
+            background-color: #f7f7f7;
+            font-size: 14px;
             color: #333;
             white-space: pre-wrap;
-            background-color: #f8f8f8;
             overflow-x: auto;
         }
 
-        .line {
-            height: 3px;
-            width: 100%;
+        .line-divider {
+            height: 2px;
             background-color: #007bff;
-            margin-bottom: 16px;
+            border-radius: 1px;
+            margin-bottom: 12px;
         }
     </style>
 </head>
@@ -156,7 +166,7 @@
             <h3>Kode Keren</h3>
             <button class="copy-btn" onclick="copyCode()">Salin</button>
         </div>
-        <div class="line"></div>
+        <div class="line-divider"></div>
         <pre id="code">const hello = 'Hello, World!';
 console.log(hello);</pre>
     </div>
@@ -171,6 +181,9 @@ console.log(hello);</pre>
             });
         }
     </script>
+</body>
+</html>
+
                 </h2>
                 <br>
                 <br>
