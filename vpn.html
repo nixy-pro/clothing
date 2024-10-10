@@ -15,7 +15,7 @@
             align-items: center;
             background-color: #000;
             color: #fff;
-            font-family: 'Montserrat', sans-serif; /* Font modern dan bersih */
+            font-family: 'Montserrat', sans-serif;
             overflow: hidden;
             text-align: center;
         }
@@ -25,11 +25,20 @@
             animation: fadeIn 1.5s ease-in-out;
         }
 
+        .text-box {
+            padding: 50px;
+            border: 5px solid rgba(255, 0, 0, 0.8);
+            border-radius: 15px;
+            background-color: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
+            transition: transform 0.3s ease;
+        }
+
         h1 {
             font-size: 6rem;
             letter-spacing: 5px;
             text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
-            transition: transform 0.3s ease;
+            animation: slideIn 1s ease forwards; /* Animasi masuk */
         }
 
         h2 {
@@ -37,16 +46,22 @@
             margin-top: 10px;
             color: #ff0000;
             text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-            transition: transform 0.3s ease;
+            animation: slideIn 1s ease forwards; /* Animasi masuk */
+            animation-delay: 0.5s; /* Penundaan animasi untuk h2 */
         }
 
-        h1:hover, h2:hover {
-            transform: scale(1.1) rotate(-5deg); /* Efek saat tersentuh */
+        .text-box:hover {
+            transform: scale(1.05); /* Efek saat kotak tersentuh */
         }
 
         @keyframes fadeIn {
             0% { opacity: 0; }
             100% { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
 
         .background {
@@ -55,18 +70,28 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-image: url('https://images.unsplash.com/photo-1529653037074-4b08db93a15f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGdyYW5kZW58ZW58MHx8fHwxNjE5Mjk5NjAx&ixlib=rb-1.2.1&q=80&w=1920');
+            background-image: url('assets/background.jpg'); /* Mengarahkan ke folder assets */
             filter: blur(8px);
             z-index: -1;
         }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 4rem; /* Ukuran font lebih kecil di seluler */
+            }
+            h2 {
+                font-size: 2rem; /* Ukuran font lebih kecil di seluler */
+            }
+        }
     </style>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> <!-- Font dari Google Fonts -->
 </head>
 <body>
     <div class="background"></div>
     <div class="container">
-        <h1>COMING SOON</h1>
-        <h2>SEGERA DATANG</h2>
+        <div class="text-box">
+            <h1>COMING SOON</h1>
+            <h2>SEGERA DATANG</h2>
+        </div>
     </div>
 
     <script>
