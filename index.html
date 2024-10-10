@@ -83,7 +83,7 @@
                 <br>
                 <br>         
         <!--==================== POST ====================-->
-                <!DOCTYPE html>
+              <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -102,11 +102,6 @@
             transition: background-color 0.5s ease, color 0.5s ease; /* Transisi saat mode berubah */
         }
 
-        .dark-mode {
-            background-color: #000; /* Warna latar belakang saat mode malam */
-            color: #fff; /* Warna teks saat mode malam */
-        }
-
         .code-container {
             background-color: #ffffff; /* Warna kontainer default */
             padding: 20px;
@@ -116,10 +111,6 @@
             max-width: 600px;
             width: 100%;
             transition: background-color 0.5s ease; /* Transisi saat mode berubah */
-        }
-
-        .dark-mode .code-container {
-            background-color: #333; /* Warna kontainer saat mode malam */
         }
 
         .title {
@@ -168,6 +159,10 @@
             font-size: 14px;
             line-height: 1.5;
             position: relative; /* Menambahkan posisi relatif untuk kontrol posisi */
+        }
+
+        .dark-mode .code-container {
+            background-color: #333; /* Warna kontainer saat mode malam */
         }
 
         .dark-mode .code-block {
@@ -222,9 +217,10 @@ console.log(greeting);
             });
         };
         
-        // Tambahkan event listener untuk toggle mode
+        // Fungsi untuk mengaktifkan/deaktivasi mode malam
         const toggleDarkMode = () => {
-            document.body.classList.toggle('dark-mode'); // Mengaktifkan/deaktivasi mode malam
+            const codeContainer = document.querySelector('.code-container');
+            codeContainer.classList.toggle('dark-mode'); // Mengaktifkan/deaktivasi mode malam hanya untuk kontainer ini
         };
         
         // Menggunakan listener jika mode sudah ada di website Anda
@@ -237,6 +233,7 @@ console.log(greeting);
     </script>
 </body>
 </html>
+
 
 
         <!--==================== POST ====================-->
