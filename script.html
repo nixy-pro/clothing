@@ -16,6 +16,7 @@
             height: 100vh;
             margin: 0;
             transition: background-color 0.5s ease, color 0.5s ease;
+            padding: 0 20px; /* Menambahkan padding kiri dan kanan */
         }
 
         .code-container {
@@ -23,7 +24,7 @@
             padding: 20px;
             border-radius: 8px;
             text-align: left;
-            max-width: 600px;
+            max-width: 600px; /* Membatasi lebar maksimal */
             width: 100%;
             transition: background-color 0.5s ease;
         }
@@ -37,6 +38,13 @@
             padding: 5px 0; /* Menambahkan padding atas dan bawah untuk penampilan */
             border: 2px solid #4a90e2; /* Border pada judul */
             border-radius: 8px; /* Membuat sudut border tumpul */
+            text-align: center; /* Menjajarkan teks di tengah */
+        }
+
+        .image-title {
+            color: #4a90e2; /* Warna teks untuk judul gambar */
+            font-size: 20px; /* Ukuran font untuk judul gambar */
+            margin-bottom: 10px; /* Jarak antara judul gambar dan gambar */
             text-align: center; /* Menjajarkan teks di tengah */
         }
 
@@ -89,10 +97,27 @@
             background-color: #222; /* Warna latar belakang blok kode saat mode malam */
             color: #fff; /* Warna teks saat mode malam */
         }
+
+        .image-container {
+            width: 100%; /* Membuat gambar responsif */
+            margin-bottom: 20px; /* Jarak antara gambar dan konten lainnya */
+            text-align: center; /* Menjajarkan gambar di tengah */
+        }
+
+        .image-container img {
+            max-width: 100%; /* Ukuran gambar otomatis */
+            height: auto; /* Memastikan gambar menjaga aspek rasio */
+            border-radius: 8px; /* Sudut tumpul pada gambar */
+        }
     </style>
 </head>
 <body>
     <div class="code-container">
+        <div class="image-title">Gambar Contoh</div>
+        <div class="image-container">
+            <img src="nixy.png" alt="NIXY"> <!-- Ganti URL gambar sesuai kebutuhan -->
+        </div>
+        
         <div class="title">UI/UX</div>
         
         <div class="copy-container">
