@@ -1,104 +1,20 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="en" >
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Coming Soon - Segera Datang">
-    <title>Test Coming Soon</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #000;
-            color: #fff;
-            font-family: 'Montserrat', sans-serif;
-            overflow: hidden;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <title>Comming Soon</title>
+  <link rel="stylesheet" href="./comming.css">
 
-        .container {
-            position: relative;
-            animation: fadeIn 1.5s ease-in-out;
-        }
-
-        .text-box {
-            padding: 50px;
-            border: 5px solid rgba(255, 0, 0, 0.8);
-            border-radius: 15px;
-            background-color: rgba(0, 0, 0, 0.6);
-            box-shadow: 0 0 20px rgba(255, 0, 0, 0.8);
-            transition: transform 0.3s ease;
-        }
-
-        h1 {
-            font-size: 6rem;
-            letter-spacing: 5px;
-            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
-            animation: slideIn 1s ease forwards; /* Animasi masuk */
-        }
-
-        h2 {
-            font-size: 3rem;
-            margin-top: 10px;
-            color: #ff0000;
-            text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
-            animation: slideIn 1s ease forwards; /* Animasi masuk */
-            animation-delay: 0.5s; /* Penundaan animasi untuk h2 */
-        }
-
-        .text-box:hover {
-            transform: scale(1.05); /* Efek saat kotak tersentuh */
-        }
-
-        @keyframes fadeIn {
-            0% { opacity: 0; }
-            100% { opacity: 1; }
-        }
-
-        @keyframes slideIn {
-            from { transform: translateY(-50px); opacity: 0; }
-            to { transform: translateY(0); opacity: 1; }
-        }
-
-        .background {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('assets/background.jpg'); /* Mengarahkan ke folder assets */
-            filter: blur(8px);
-            z-index: -1;
-        }
-
-        @media (max-width: 768px) {
-            h1 {
-                font-size: 4rem; /* Ukuran font lebih kecil di seluler */
-            }
-            h2 {
-                font-size: 2rem; /* Ukuran font lebih kecil di seluler */
-            }
-        }
-    </style>
 </head>
 <body>
-    <div class="background"></div>
-    <div class="container">
-        <div class="text-box">
-            <h1>COMING SOON</h1>
-            <h2>SEGERA DATANG</h2>
-        </div>
-    </div>
-
-    <script>
-        // Tambahkan efek suara jika diinginkan
-        // var audio = new Audio('path/to/your/sound.mp3');
-        // audio.loop = true;
-        // audio.play();
-    </script>
+<!-- partial:index.partial.html -->
+<div class="container">
+  <h3>COmMING SOON</h3>
+  <div class="bar">
+    <div class="progress"></div>
+  </div>
+</div>
+<!-- partial -->
+  <script src='//cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 </body>
 </html>
