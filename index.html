@@ -101,6 +101,8 @@
             border: 1px solid #ddd;
             padding: 16px;
             width: 100%;
+            max-width: 600px; /* Menjaga lebar maksimal */
+            background-color: #f9f9f9; /* Latar belakang netral */
         }
 
         .header {
@@ -122,15 +124,20 @@
             color: white;
             border: none;
             cursor: pointer;
+            border-radius: 4px; /* Membuat sudut tombol melengkung */
+        }
+
+        .copy-btn:hover {
+            background-color: #0056b3; /* Warna saat hover */
         }
 
         pre {
             padding: 10px;
-            background-color: #f1f1f1;
+            background-color: #ffffff; /* Latar belakang kode */
             border: 1px solid #ccc;
             font-size: 14px;
-            white-space: pre-wrap;
-            word-wrap: break-word;
+            white-space: pre-wrap; /* Menjaga format */
+            word-wrap: break-word; /* Memecah kata yang panjang */
         }
     </style>
 </head>
@@ -146,8 +153,8 @@ console.log(hello);</pre>
 
     <script>
         function copyCode() {
-            var code = document.getElementById('code').innerText;
-            var textArea = document.createElement("textarea");
+            const code = document.getElementById('code').innerText;
+            const textArea = document.createElement("textarea");
             textArea.value = code;
             document.body.appendChild(textArea);
             textArea.select();
@@ -158,7 +165,6 @@ console.log(hello);</pre>
     </script>
 </body>
 </html>
-
         <!--==================== POST ====================-->
         <script src="assets/js/scrollreveal.min.js"></script>
         <!--=============== SWIPER JS ===============-->
