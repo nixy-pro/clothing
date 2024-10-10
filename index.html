@@ -88,63 +88,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Copy Code Feature</title>
+    <title>Salin Kode Fitur</title>
     <style>
         body {
             font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
             margin: 0;
-            padding: 20px;
         }
 
         .code-container {
-            border: 1px solid #ccc;
-            padding: 10px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            text-align: left;
+            max-width: 600px;
             width: 100%;
-            max-width: 500px;
         }
 
-        h3 {
-            margin: 0;
-            font-size: 18px;
-            color: #333;
-        }
-
-        .copy-btn {
-            padding: 8px 10px;
-            font-size: 14px;
-            color: white;
+        .copy-button {
             background-color: #007bff;
+            color: white;
             border: none;
+            padding: 10px 15px;
+            border-radius: 5px;
             cursor: pointer;
-            border-radius: 4px;
+            font-size: 16px;
+            margin-bottom: 10px;
+            transition: background-color 0.3s ease;
+            width: 100%; /* Tombol mengisi lebar kontainer */
         }
 
-        pre {
-            background-color: #f7f7f7;
+        .copy-button:hover {
+            background-color: #0056b3;
+        }
+
+        .code-block {
+            background-color: #f8f9fa;
+            border: 1px solid #ced4da;
             padding: 10px;
-            border: 1px solid #ddd;
-            white-space: pre-wrap; 
-            word-wrap: break-word; 
+            border-radius: 5px;
+            overflow-x: auto;
+            max-width: 100%;
+            white-space: pre-wrap;
+            font-family: monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            position: relative; /* Menambahkan posisi relatif untuk kontrol posisi */
+        }
+
+        /* Gaya untuk menampilkan tooltip */
+        .tooltip {
+            display: none;
+            position: absolute;
+            top: -30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #333;
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 5px;
+            font-size: 12px;
+            z-index: 1;
+        }
+
+        .show-tooltip .tooltip {
+            display: block; /* Menampilkan tooltip saat dibutuhkan */
         }
     </style>
 </head>
 <body>
     <div class="code-container">
-        <h3>Kode Keren</h3>
-        <button class="copy-btn" onclick="copyCode()">Salin</button>
-        <pre id="code">const hello = 'Hello, World!';
-console.log(hello);</pre>
+        <button id="copyButton" class="copy-button">Salin Kode</button>
+        <pre id="codeToCopy" class="code-block">
+<code>
+const greeting = "Hello, World!";
+console.log(greeting);
+</code>
+        </pre>
+        <div class="tooltip" id="tooltip">Kode berhasil disalin!</div>
     </div>
 
     <script>
-        function copyCode() {
-            const code = document.getElementById('code').innerText;
-            navigator.clipboard.writeText(code).then(() => {
-                alert("Kode berhasil disalin!");
-            }).catch(err => {
-                alert("Gagal menyalin kode");
+        document.getElementById("copyButton").onclick = function() {
+            const code = document.getElementById("codeToCopy").innerText;
+            navigator.clipboard.writeText(code).then(function() {
+                const tooltip = document.getElementById("tooltip");
+                tooltip.classList.add('show-tooltip'); // Menampilkan tooltip
+                setTimeout(() => {
+                    tooltip.classList.remove('show-tooltip'); // Menghapus tooltip setelah 2 detik
+                }, 2000);
+            }, function(err) {
+                console.error("Gagal menyalin kode: ", err);
             });
-        }
+        };
     </script>
 </body>
 </html>
