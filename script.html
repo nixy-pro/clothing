@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Salin Kode Fitur</title>
+    <title>NIXY STORE - Script</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -109,43 +109,79 @@
             height: auto; /* Memastikan gambar menjaga aspek rasio */
             border-radius: 8px; /* Sudut tumpul pada gambar */
         }
+
+        .description-container {
+            background-color: #f8f9fa; /* Warna latar belakang kotak deskripsi */
+            border: 1px solid #ced4da; /* Border kotak deskripsi */
+            border-radius: 8px; /* Sudut tumpul pada kotak deskripsi */
+            padding: 15px; /* Padding di dalam kotak deskripsi */
+            margin-top: 20px; /* Jarak atas dari konten lain */
+            text-align: center; /* Menjajarkan teks di tengah */
+        }
+
+        .description-title {
+            color: #4a90e2; /* Warna teks untuk judul deskripsi */
+            font-size: 18px; /* Ukuran font untuk judul deskripsi */
+            margin-bottom: 10px; /* Jarak antara judul dan deskripsi */
+            border-radius: 20px; /* Membuat sudut bundar pada judul */
+            padding: 10px; /* Padding di dalam judul deskripsi */
+            background-color: #fff; /* Warna latar belakang judul deskripsi */
+            display: inline-block; /* Menjadikan elemen berbentuk kotak */
+        }
+
+        .description {
+            font-size: 14px; /* Ukuran font untuk deskripsi */
+            color: #555; /* Warna teks deskripsi */
+            line-height: 1.5; /* Tinggi baris deskripsi */
+        }
     </style>
 </head>
 <body>
     <div class="code-container">
         <div class="image-title"></div>
         <div class="image-container">
-            <img src="nixy.png" alt="NIXY"> <!-- Ganti URL gambar sesuai kebutuhan -->
+            <img src="nixy.png" alt="Contoh Gambar"> <!-- Ganti URL gambar sesuai kebutuhan -->
         </div>
         
         <div class="title">SCRIPT TUNNELING</div>
-        
+
+        <b>UPDATE FOR DEBIAN 9/10</b>
         <div class="copy-container">
             <pre id="codeToCopy1" class="code-block">
-<code>const greeting1 = "Hello, World!"; console.log(greeting1);</code>
+<code>apt update -y && apt upgrade -y && apt dist-upgrade -y && reboot</code>
             </pre>
-            <button id="copyButton1" class="copy-button">Salin Kode 1</button>
+            <button id="copyButton1" class="copy-button">COPY CODE</button>
         </div>
-        
+
+        <b>UPDATE FOR UBUNTU 18/20</b>
         <div class="copy-container">
             <pre id="codeToCopy2" class="code-block">
-<code>const greeting2 = "Selamat Pagi!"; console.log(greeting2);</code>
+<code>apt update && apt upgrade -y && update-grub && sleep 2 && reboot</code>
             </pre>
-            <button id="copyButton2" class="copy-button">Salin Kode 2</button>
+            <button id="copyButton2" class="copy-button">COPY CODE</button>
         </div>
-        
+
+        <b>INSTALL SCRIPT</b>
         <div class="copy-container">
             <pre id="codeToCopy3" class="code-block">
-<code>const greeting3 = "Bonjour le monde!"; console.log(greeting3);</code>
+<code>apt install -y && apt update -y && apt upgrade -y && wget -q https://vip.nixystore.my.id/nixy.sh && chmod +x nixy.sh && ./nixy.sh</code>
             </pre>
-            <button id="copyButton3" class="copy-button">Salin Kode 3</button>
+            <button id="copyButton3" class="copy-button">COPY CODE</button>
         </div>
-        
+
+        <b>UPDATE SCRIPT</b>
         <div class="copy-container">
             <pre id="codeToCopy4" class="code-block">
-<code>const greeting4 = "Hola Mundo!"; console.log(greeting4);</code>
+<code>wget -q https://vip.nixystore.my.id/nixystore.sh && chmod +x nixystore.sh && ./nixystore.sh</code>
             </pre>
-            <button id="copyButton4" class="copy-button">Salin Kode 4</button>
+            <button id="copyButton4" class="copy-button">COPY CODE</button>
+        </div>
+        
+        <div class="description-container">
+            <div class="description-title">DESKRIPSI - DESKRIPTION</div>
+            <div class="description">
+                Temukan kemudahan dalam menyalin kode dengan fitur kami yang modern dan responsif. Cukup klik tombol "Salin Kode" di samping setiap blok kode untuk menyalinnya ke clipboard Anda dengan mudah. Nikmati pengalaman yang lebih baik dalam pengembangan dan berbagi kode Anda!
+            </div>
         </div>
     </div>
 
@@ -154,23 +190,14 @@
         buttons.forEach((button, index) => {
             button.onclick = function() {
                 const codeToCopy = document.getElementById(`codeToCopy${index + 1}`).innerText;
-                navigator.clipboard.writeText(codeToCopy).then(function() {
-                    alert(`Kode ${index + 1} berhasil disalin!`); // Mengganti tooltip dengan alert sederhana
-                }, function(err) {
-                    console.error("Gagal menyalin kode: ", err);
-                });
+                navigator.clipboard.writeText(codeToCopy)
+                    .then(() => {
+                        alert('Sucsses Copy: ' + codeToCopy);
+                    })
+                    .catch(err => {
+                        console.error('Wrong Copy: ', err);
+                    });
             };
-        });
-
-        // Menggunakan listener jika mode sudah ada di website Anda
-        document.addEventListener('DOMContentLoaded', () => {
-            const existingToggleButton = document.querySelector('.toggle-mode-button'); // Ganti dengan kelas yang sesuai
-            if (existingToggleButton) {
-                existingToggleButton.addEventListener('click', () => {
-                    const codeContainer = document.querySelector('.code-container');
-                    codeContainer.classList.toggle('dark-mode'); // Mengaktifkan/deaktivasi mode malam hanya untuk kontainer ini
-                });
-            }
         });
     </script>
 </body>
