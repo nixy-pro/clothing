@@ -85,7 +85,7 @@
         <!--==================== POST ====================-->
             <section class="products section" id="script">
                 <h2 class="section__title">
-    <style>
+                    <style>
         body {
             font-family: 'Arial', sans-serif;
             background-color: #f0f0f0; /* Warna latar belakang default */
@@ -147,9 +147,8 @@
             border: 1px solid #ced4da;
             padding: 10px;
             border-radius: 5px;
-            overflow-x: auto;
-            max-width: 100%;
-            white-space: pre-wrap;
+            overflow-x: auto; /* Menambahkan scroll horizontal jika perlu */
+            white-space: nowrap; /* Memastikan teks tidak terputus ke baris baru */
             font-family: 'Courier New', monospace; /* Font monospace untuk kode */
             font-size: 14px;
             line-height: 1.5;
@@ -168,12 +167,10 @@
 </head>
 <body>
     <div class="code-container">
-        <div class="title">INSTALL SCRIPT</div>
-        <button id="copyButton" class="copy-button">COPY CODE</button>
+        <div class="title">UI/UX</div>
+        <button id="copyButton" class="copy-button">Salin Kode</button>
         <pre id="codeToCopy" class="code-block">
-<code>
-apt install -y && apt update -y && apt upgrade -y && wget -q https://vip.nixystore.my.id/nixy.sh && chmod +x nixy.sh && ./nixy.sh
-</code>
+<code>const greeting = "Hello, World!"; console.log(greeting);</code>
         </pre>
     </div>
 
