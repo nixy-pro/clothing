@@ -94,7 +94,7 @@
     <title>Salin Kode Fitur</title>
     <style>
         body {
-            font-family: 'Arial', sans-serif; /* Font modern */
+            font-family: 'Arial', sans-serif;
             background-color: #f0f0f0; /* Warna latar belakang default */
             color: #333; /* Warna teks default */
             display: flex;
@@ -102,17 +102,17 @@
             align-items: center;
             height: 100vh;
             margin: 0;
-            transition: background-color 0.5s ease, color 0.5s ease; /* Transisi saat mode berubah */
+            transition: background-color 0.5s ease, color 0.5s ease;
         }
 
         .code-container {
             background-color: transparent; /* Mengubah warna latar belakang menjadi transparan */
             padding: 20px;
-            border-radius: 8px; /* Menggunakan border-radius untuk membuat sudut tumpul */
+            border-radius: 8px;
             text-align: left;
             max-width: 600px;
             width: 100%;
-            transition: background-color 0.5s ease; /* Transisi saat mode berubah */
+            transition: background-color 0.5s ease;
         }
 
         .title {
@@ -160,7 +160,7 @@
             font-family: 'Courier New', monospace; /* Font monospace untuk kode */
             font-size: 14px;
             line-height: 1.5;
-            position: relative; /* Menambahkan posisi relatif untuk kontrol posisi */
+            position: relative;
         }
 
         .dark-mode .code-container {
@@ -170,25 +170,6 @@
         .dark-mode .code-block {
             background-color: #222; /* Warna latar belakang blok kode saat mode malam */
             color: #fff; /* Warna teks saat mode malam */
-        }
-
-        /* Gaya untuk menampilkan tooltip */
-        .tooltip {
-            display: none;
-            position: absolute;
-            top: -30px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #333;
-            color: #fff;
-            padding: 5px 10px;
-            border-radius: 5px;
-            font-size: 12px;
-            z-index: 1;
-        }
-
-        .show-tooltip .tooltip {
-            display: block; /* Menampilkan tooltip saat dibutuhkan */
         }
     </style>
 </head>
@@ -202,34 +183,26 @@ const greeting = "Hello, World!";
 console.log(greeting);
 </code>
         </pre>
-        <div class="tooltip" id="tooltip">Kode berhasil disalin!</div>
     </div>
 
     <script>
         document.getElementById("copyButton").onclick = function() {
             const code = document.getElementById("codeToCopy").innerText;
             navigator.clipboard.writeText(code).then(function() {
-                const tooltip = document.getElementById("tooltip");
-                tooltip.classList.add('show-tooltip'); // Menampilkan tooltip
-                setTimeout(() => {
-                    tooltip.classList.remove('show-tooltip'); // Menghapus tooltip setelah 2 detik
-                }, 2000);
+                alert("Kode berhasil disalin!"); // Mengganti tooltip dengan alert sederhana
             }, function(err) {
                 console.error("Gagal menyalin kode: ", err);
             });
-        };
-        
-        // Fungsi untuk mengaktifkan/deaktivasi mode malam
-        const toggleDarkMode = () => {
-            const codeContainer = document.querySelector('.code-container');
-            codeContainer.classList.toggle('dark-mode'); // Mengaktifkan/deaktivasi mode malam hanya untuk kontainer ini
         };
         
         // Menggunakan listener jika mode sudah ada di website Anda
         document.addEventListener('DOMContentLoaded', () => {
             const existingToggleButton = document.querySelector('.toggle-mode-button'); // Ganti dengan kelas yang sesuai
             if (existingToggleButton) {
-                existingToggleButton.addEventListener('click', toggleDarkMode);
+                existingToggleButton.addEventListener('click', () => {
+                    const codeContainer = document.querySelector('.code-container');
+                    codeContainer.classList.toggle('dark-mode'); // Mengaktifkan/deaktivasi mode malam hanya untuk kontainer ini
+                });
             }
         });
     </script>
