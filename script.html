@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salin Kode Fitur</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f0f0f0; /* Warna latar belakang default */
+            color: #333; /* Warna teks default */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column; /* Menjajarkan konten secara vertikal */
+            height: 100vh;
+            margin: 0;
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .code-container {
+            background-color: transparent; /* Mengubah warna latar belakang menjadi transparan */
+            padding: 20px;
+            border-radius: 8px;
+            text-align: left;
+            max-width: 600px;
+            width: 100%;
+            transition: background-color 0.5s ease;
+        }
+
+        .title {
+            color: #4a90e2; /* Warna teks judul */
+            font-size: 22px; /* Ukuran font untuk judul */
+            margin-bottom: 10px;
+            font-family: 'Roboto', sans-serif; /* Font Roboto untuk judul */
+            letter-spacing: 1px; /* Jarak antar huruf */
+            padding: 5px 0; /* Menambahkan padding atas dan bawah untuk penampilan */
+            border: 2px solid #4a90e2; /* Border pada judul */
+            border-radius: 8px; /* Membuat sudut border tumpul */
+            text-align: center; /* Menjajarkan teks di tengah */
+        }
+
+        .copy-container {
+            display: flex; /* Menggunakan flexbox untuk menyusun elemen secara horizontal */
+            align-items: center; /* Menjajarkan konten secara vertikal */
+            margin-bottom: 15px; /* Jarak antar kontainer kode */
+        }
+
+        .copy-button {
+            background: linear-gradient(145deg, #ff8a00, #e52e71); /* Warna 3D dengan gradien */
+            color: white;
+            border: none;
+            padding: 5px 10px; /* Mengurangi padding untuk tombol */
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 14px; /* Ukuran font untuk tombol lebih kecil */
+            margin-left: 10px; /* Jarak tombol dari teks kode */
+            transition: 0.5s;
+            box-shadow: 5px 5px 15px #a3a3a3, 
+                        -5px -5px 15px #ffffff; /* Efek bayangan 3D */
+        }
+
+        .copy-button:hover {
+            transform: translateY(-4px); /* Efek hover untuk tampilan 3D */
+            box-shadow: 2px 2px 10px #a3a3a3, 
+                        -2px -2px 10px #ffffff; /* Bayangan saat hover */
+        }
+
+        .code-block {
+            background-color: #f8f9fa; /* Warna latar belakang blok kode default */
+            border: 1px solid #ced4da;
+            padding: 5px; /* Mengurangi padding di blok kode */
+            border-radius: 5px;
+            overflow-x: auto; /* Menambahkan scroll horizontal jika perlu */
+            white-space: nowrap; /* Memastikan teks tidak terputus ke baris baru */
+            font-family: 'Courier New', monospace; /* Font monospace untuk kode */
+            font-size: 12px; /* Ukuran font lebih kecil untuk kode */
+            line-height: 1.2; /* Mengurangi tinggi baris */
+            position: relative;
+            margin-bottom: 5px; /* Jarak antar blok kode */
+            flex: 1; /* Mengisi ruang yang tersedia */
+        }
+
+        .dark-mode .code-container {
+            background-color: #333; /* Warna kontainer saat mode malam */
+        }
+
+        .dark-mode .code-block {
+            background-color: #222; /* Warna latar belakang blok kode saat mode malam */
+            color: #fff; /* Warna teks saat mode malam */
+        }
+    </style>
+</head>
+<body>
+    <div class="code-container">
+        <div class="title">UI/UX</div>
+        
+        <div class="copy-container">
+            <pre id="codeToCopy1" class="code-block">
+<code>const greeting1 = "Hello, World!"; console.log(greeting1);</code>
+            </pre>
+            <button id="copyButton1" class="copy-button">Salin Kode 1</button>
+        </div>
+        
+        <div class="copy-container">
+            <pre id="codeToCopy2" class="code-block">
+<code>const greeting2 = "Selamat Pagi!"; console.log(greeting2);</code>
+            </pre>
+            <button id="copyButton2" class="copy-button">Salin Kode 2</button>
+        </div>
+        
+        <div class="copy-container">
+            <pre id="codeToCopy3" class="code-block">
+<code>const greeting3 = "Bonjour le monde!"; console.log(greeting3);</code>
+            </pre>
+            <button id="copyButton3" class="copy-button">Salin Kode 3</button>
+        </div>
+        
+        <div class="copy-container">
+            <pre id="codeToCopy4" class="code-block">
+<code>const greeting4 = "Hola Mundo!"; console.log(greeting4);</code>
+            </pre>
+            <button id="copyButton4" class="copy-button">Salin Kode 4</button>
+        </div>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll('.copy-button');
+        buttons.forEach((button, index) => {
+            button.onclick = function() {
+                const codeToCopy = document.getElementById(`codeToCopy${index + 1}`).innerText;
+                navigator.clipboard.writeText(codeToCopy).then(function() {
+                    alert(`Kode ${index + 1} berhasil disalin!`); // Mengganti tooltip dengan alert sederhana
+                }, function(err) {
+                    console.error("Gagal menyalin kode: ", err);
+                });
+            };
+        });
+
+        // Menggunakan listener jika mode sudah ada di website Anda
+        document.addEventListener('DOMContentLoaded', () => {
+            const existingToggleButton = document.querySelector('.toggle-mode-button'); // Ganti dengan kelas yang sesuai
+            if (existingToggleButton) {
+                existingToggleButton.addEventListener('click', () => {
+                    const codeContainer = document.querySelector('.code-container');
+                    codeContainer.classList.toggle('dark-mode'); // Mengaktifkan/deaktivasi mode malam hanya untuk kontainer ini
+                });
+            }
+        });
+    </script>
+</body>
+</html>
