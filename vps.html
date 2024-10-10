@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Coming Soon - Segera Datang">
+    <title>Test Coming Soon</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Montserrat', sans-serif; /* Font modern dan bersih */
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .container {
+            position: relative;
+            animation: fadeIn 1.5s ease-in-out;
+        }
+
+        h1 {
+            font-size: 6rem;
+            letter-spacing: 5px;
+            text-shadow: 0 0 20px rgba(255, 0, 0, 0.8), 0 0 30px rgba(255, 0, 0, 0.6);
+            transition: transform 0.3s ease;
+        }
+
+        h2 {
+            font-size: 3rem;
+            margin-top: 10px;
+            color: #ff0000;
+            text-shadow: 0 0 15px rgba(255, 0, 0, 0.7);
+            transition: transform 0.3s ease;
+        }
+
+        h1:hover, h2:hover {
+            transform: scale(1.1) rotate(-5deg); /* Efek saat tersentuh */
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        .background {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('https://images.unsplash.com/photo-1529653037074-4b08db93a15f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=MnwzNjUyOXwwfDF8c2VhcmNofDR8fGdyYW5kZW58ZW58MHx8fHwxNjE5Mjk5NjAx&ixlib=rb-1.2.1&q=80&w=1920');
+            filter: blur(8px);
+            z-index: -1;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet"> <!-- Font dari Google Fonts -->
+</head>
+<body>
+    <div class="background"></div>
+    <div class="container">
+        <h1>COMING SOON</h1>
+        <h2>SEGERA DATANG</h2>
+    </div>
+
+    <script>
+        // Tambahkan efek suara jika diinginkan
+        // var audio = new Audio('path/to/your/sound.mp3');
+        // audio.loop = true;
+        // audio.play();
+    </script>
+</body>
+</html>
