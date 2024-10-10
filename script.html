@@ -100,7 +100,7 @@
 
         .image-container {
             width: 100%; /* Membuat gambar responsif */
-            margin-bottom: 20px; /* Jarak antara gambar dan konten lainnya */
+            margin: 20px 0; /* Jarak antara gambar dan konten lainnya */
             text-align: center; /* Menjajarkan gambar di tengah */
         }
 
@@ -135,15 +135,12 @@
             line-height: 1.5; /* Tinggi baris deskripsi */
         }
     </style>
-  <br>
 </head>
 <body>
     <div class="code-container">
-        <div class="image-title"></div>
+        <div class="image-title"></div> <!-- Judul gambar -->
         <div class="image-container">
-          <br><br>
-          <br>
-            <img src="https://nixystore.my.id/nixy.png" alt="Contoh Gambar"> <!-- Ganti URL gambar sesuai kebutuhan -->
+            <img src="https://nixystore.my.id/nixy.png" alt="NIXY STORE"> <!-- Ganti URL gambar sesuai kebutuhan -->
         </div>
         
         <div class="title">SCRIPT TUNNELING</div>
@@ -184,32 +181,28 @@
         <div class="description-container">
             <div class="description-title">DESKRIPSI</div>
             <div class="description">
-                Script ini hanya support di OS Ubuntu 9/10 dan Ubuntu 18/20 - Sebelum install kalian harus izin ip vps dulu, untuk meminta izin silahkan hubungi kontak admin. Jika sudah mendapatkan akses langkah yang pertama update dulu, jika udah selesi di update, selanjutkan kalian install script.  
+                 Script ini hanya support di OS Ubuntu 9/10 dan Ubuntu 18/20 - Sebelum install kalian harus izin ip vps dulu, untuk meminta izin silahkan hubungi kontak admin. Jika sudah mendapatkan akses langkah yang pertama update dulu, jika udah selesi di update, selanjutkan kalian install script.
             </div>
-          <br>
-          <hr>
-
-
-            <div class="description-title">DESCRIPTION</div>
+        </div>
+        
+        <div class="description-container">
+            <div class="description-title">DESKRIPSTION</div>
             <div class="description">
-                This script only supports Ubuntu 9/10 and Ubuntu 18/20 OS - Before installing, you must have VPS IP permission first, to ask for permission, please contact the admin contact. If you have access, the first step is to update first, if you have finished updating, then you install the script.  
+                This script only supports Ubuntu 9/10 and Ubuntu 18/20 OS - Before installing, you must have VPS IP permission first, to ask for permission, please contact the admin contact. If you have access, the first step is to update first, if you have finished updating, then you install the script.
             </div>
         </div>
     </div>
 
     <script>
-        const buttons = document.querySelectorAll('.copy-button');
-        buttons.forEach((button, index) => {
-            button.onclick = function() {
-                const codeToCopy = document.getElementById(`codeToCopy${index + 1}`).innerText;
-                navigator.clipboard.writeText(codeToCopy)
-                    .then(() => {
-                        alert('Sucsses Copy: ' + codeToCopy);
-                    })
-                    .catch(err => {
-                        console.error('Wrong Copy: ', err);
-                    });
-            };
+        document.querySelectorAll('.copy-button').forEach(button => {
+            button.addEventListener('click', function() {
+                const codeBlock = this.previousElementSibling.textContent;
+                navigator.clipboard.writeText(codeBlock).then(() => {
+                    alert('Code copied to clipboard!');
+                }).catch(err => {
+                    alert('Error copying code: ', err);
+                });
+            });
         });
     </script>
 </body>
